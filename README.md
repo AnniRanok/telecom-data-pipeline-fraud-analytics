@@ -163,6 +163,10 @@ One fact table, `fact_usage_events`, surrounded by six dimensions:
 **Grain:** one row per customer, per time bucket, per tariff, per event
 type, per channel, per location.
 
+### Data Warehouse Star Schema
+
+![DWH Star Schema](images/er_star_schema.png)
+
 ### SCD Strategy
 
 | Dimension       | Type | Rationale                                                        |
