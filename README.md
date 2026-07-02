@@ -256,6 +256,12 @@ python etl/etl_pipeline.py --start 2024-01-01 --end 2024-01-31
 
 ---
 
+## 🔗 Live Demo
+
+👉 [Telecom DWH Dashboard](https://anniranok.github.io/telecom_dwh/)
+
+---
+
 ## Future Improvements
 
 - Additional event types: roaming attach, OTP requests, customer login,
