@@ -117,7 +117,7 @@ telecom_dwh/
 │   ├── revenue_dashboard_offline.html # Revenue analytics dashboard
 │   └── usage_dashboard_offline.html  # Usage analytics dashboard
 │
-├── images/                           # 📌 Root-level documentation assets
+├── images/                           #  Root-level documentation assets
 │   ├── OLTP_ERD_Business_Model.png
 │   ├── DWH_ERD_Star_Schema.png
 │   ├── er_star_schema.png
