@@ -3,8 +3,26 @@ __pycache__/
 *.py[cod]
 *.pyo
 
+# Environments
+venv/
+.env/
+.venv/
+
 # Databases
 *.duckdb
+
+# Data outputs
+data/
+output/
+*.csv
+*.parquet
+
+# Logs
+*.log
+logs/
+
+# Jupyter
+.ipynb_checkpoints/
 
 # macOS
 .DS_Store
