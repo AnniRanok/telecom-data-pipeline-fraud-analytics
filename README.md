@@ -87,20 +87,20 @@ against either backend.
 telecom_dwh/
 │
 ├── simulator/                         # Data Source Simulation (OLTP simulation)
-│   ├── customer_generator.py          # Subscriber generation
-│   ├── event_simulator.py             # Real-time telecom events simulation
-│   └── config.py                      # Simulation configuration
+│   ├── customer_generator.py
+│   ├── event_simulator.py
+│   └── config.py
 │
 ├── db/                                # Database Connection Layer
-│   └── connection.py                  # DB connection manager / pooling
+│   └── connection.py
 │
 ├── etl/                               # ETL Layer (logic + orchestration)
 │
-│   ├── business_db/                   # Operational / staging database layer
-│   │   ├── create_business_db.sql     # OLTP / business DB initialization
+│   ├── business_db/                   # Operational / staging database
+│   │   ├── create_business_db.sql
 │   │
 │   ├── dwh/                           # Data Warehouse layer
-│   │   └── create_dwh.sql             # Star schema / DWH creation
+│   │   └── create_dwh.sql
 │   │
 │   ├── etl_pipeline.py                # Main ETL logic for data movement
 │   ├── data_quality_check.sql         # Data quality validation rules
@@ -108,16 +108,15 @@ telecom_dwh/
 │   ├── row_count_reconciliation.sql   # Data consistency checks
 │   ├── analytical_queries.sql         # Analytical validation queries
 │   ├── etl_run_report.sql             # ETL execution reporting
-│   │
 │   ├── run_pipeline.py                # ETL orchestration (end-to-end)
 │   └── dq_runner.py                   # Data quality checks runner
 │
 ├── dashboards/                        # BI / Reporting Layer
-│   ├── fraud_dashboard_offline.html   # Fraud analytics dashboard
-│   ├── revenue_dashboard_offline.html # Revenue analytics dashboard
-│   └── usage_dashboard_offline.html  # Usage analytics dashboard
+│   ├── fraud_dashboard_offline.html
+│   ├── revenue_dashboard_offline.html
+│   └── usage_dashboard_offline.html
 │
-├── images/                           #  Root-level documentation assets
+├── images/                           # Architecture diagrams & visuals
 │   ├── OLTP_ERD_Business_Model.png
 │   ├── DWH_ERD_Star_Schema.png
 │   ├── er_star_schema.png
@@ -125,6 +124,10 @@ telecom_dwh/
 │
 ├── docs/                              # Documentation
 │   └── ETL_Mapping_TelecomDWH.xlsx
+│
+├── Speicherplatzberechnung.sql        # Storage calculation / sizing script (root-level)
+│
+├── requirements.txt                   # Python dependencies
 │
 └── README.md
 ```
