@@ -85,28 +85,48 @@ against either backend.
 
 ```
 telecom_dwh/
-├── run_pipeline.py            # Single entry point — runs the full platform
 │
-├── db/
-│   └── connection.py           # Backend-agnostic connection layer
+├── simulator/                         # Data Source Simulation (OLTP simulation)
+│   ├── customer_generator.py          # Subscriber generation
+│   ├── event_simulator.py             # Real-time telecom events simulation
+│   └── config.py                      # Simulation configuration
 │
-├── simulator/
-│   ├── config.py                # Segments, tariffs, event types, fraud scenarios
-│   ├── customer_generator.py    # Customers, contracts, devices, locations, payments
-│   └── event_simulator.py       # Behavioral event engine and fraud injection
+├── db/                                # Database Connection Layer
+│   └── connection.py                  # DB connection manager / pooling
 │
-├── business_db/
-│   └── create_business_db.sql   # Operational schema, 12 tables, 3NF
+├── etl/                               # ETL Layer (logic + orchestration)
 │
-├── dwh/
-│   └── create_dwh.sql           # Star schema: 1 fact table, 6 dimensions, staging
+│   ├── business_db/                   # Operational / staging database layer
+│   │   ├── create_business_db.sql     # OLTP / business DB initialization
+│   │
+│   ├── dwh/                           # Data Warehouse layer
+│   │   └── create_dwh.sql             # Star schema / DWH creation
+│   │
+│   ├── etl_pipeline.py                # Main ETL logic for data movement
+│   ├── data_quality_check.sql         # Data quality validation rules
+│   ├── business_rules_check.sql       # Business rules validation
+│   ├── row_count_reconciliation.sql   # Data consistency checks
+│   ├── analytical_queries.sql         # Analytical validation queries
+│   ├── etl_run_report.sql             # ETL execution reporting
+│   │
+│   ├── run_pipeline.py                # ETL orchestration (end-to-end)
+│   └── dq_runner.py                   # Data quality checks runner
 │
-├── etl/
-│   ├── etl_pipeline.py          # Extract → Stage → Validate → Transform → Load
-│   └── analytical_queries.sql   # Business queries and ETL verification checks
+├── dashboards/                        # BI / Reporting Layer
+│   ├── fraud_dashboard_offline.html   # Fraud analytics dashboard
+│   ├── revenue_dashboard_offline.html # Revenue analytics dashboard
+│   └── usage_dashboard_offline.html  # Usage analytics dashboard
 │
-└── docs/
-    └── README.md
+├── images/                           # 📌 Root-level documentation assets
+│   ├── OLTP_ERD_Business_Model.png
+│   ├── DWH_ERD_Star_Schema.png
+│   ├── er_star_schema.png
+│   └── pipeline_run.jpg
+│
+├── docs/                              # Documentation
+│   └── ETL_Mapping_TelecomDWH.xlsx
+│
+└── README.md
 ```
 
 ---
