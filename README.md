@@ -151,8 +151,7 @@ Design constraints:
 - Fraud labels are attached at the individual event level
 
  
-
-![OLTP ERD - Business System Model](images/OLTP%20ERD%20-%20Business%20System%20Model.png)
+![OLTP ERD](images/oltp_erd_business_system_model.png)
 
 ### Data Warehouse (Star Schema)
 
