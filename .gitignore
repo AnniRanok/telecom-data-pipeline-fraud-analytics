@@ -14,3 +14,8 @@ __pycache__/
 
 # PyCharm
 .idea/
+
+# Office temp files
+.~lock.*
+*.tmp
+~$*
