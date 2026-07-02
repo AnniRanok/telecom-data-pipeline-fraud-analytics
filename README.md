@@ -150,7 +150,7 @@ Design constraints:
 - Each CDR (call detail record) links to one contract and one event type
 - Fraud labels are attached at the individual event level
 
-  ### Operational Database ERD
+ 
 
 ![OLTP ERD - Business System Model](images/OLTP%20ERD%20-%20Business%20System%20Model.png)
 
@@ -163,7 +163,7 @@ One fact table, `fact_usage_events`, surrounded by six dimensions:
 **Grain:** one row per customer, per time bucket, per tariff, per event
 type, per channel, per location.
 
-### Data Warehouse Star Schema
+
 
 ![DWH Star Schema](images/er_star_schema.png)
 
