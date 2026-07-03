@@ -1,4 +1,4 @@
-# Telecom Customer Behavior & Fraud Analytics Platform
+# Behavioral Data Pipeline for Fraud & Risk Analytics (Simulation + Data Warehouse)
 
 A telecom analytics platform that simulates customer activity, stores operational
 data in a normalized relational database, processes incremental ETL pipelines,
